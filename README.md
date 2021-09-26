@@ -38,4 +38,4 @@ Este projeto esta sendo desenvolvido por apenas uma pessoa, com fim de aprimorar
 - Instale as dependências com `yarn`
 - Inicie o servidor com `yarn dev`
 
-A aplicação pode ser acessada em [`localhost:3333`](http://localhost:3333).
+A aplicação pode ser acessada em [`localhost:3000`](http://localhost:3000).
