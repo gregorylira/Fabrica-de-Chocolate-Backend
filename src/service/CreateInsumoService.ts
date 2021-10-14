@@ -27,7 +27,12 @@ class CreateInsumoService {
         });
 
         if(insumoAlreadyExists){
-            throw new Error ("Product already exists");
+            //throw new Error ("Product already exists");
+            const mensagem = {
+                mensage: "This Product already exists",
+                product: produto
+            }
+            return mensagem
         }
 
         const insumo = insumoRepository.create({

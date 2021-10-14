@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { json, Request, Response } from "express";
 import { CreateInsumoService } from "../service/CreateInsumoService";
 
 
