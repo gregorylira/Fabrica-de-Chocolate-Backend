@@ -14,7 +14,7 @@ class Preco_Sugerido {
     custo_MP: number;
 
     @Column("float")
-    custo_total: string;
+    custo_total: number;
 
     @Column("float")
     preco_min: number;
