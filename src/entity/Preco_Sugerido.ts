@@ -2,7 +2,7 @@ import {Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn} from 
 import { v4 as uuid } from "uuid"
 
 @Entity("precosSugeridos")
-class Insumo {
+class Preco_Sugerido {
     
     @PrimaryColumn()
     readonly id: string;
@@ -52,4 +52,4 @@ class Insumo {
 
 }
 
-export { Insumo }
+export { Preco_Sugerido }
