@@ -27,10 +27,14 @@ Este projeto esta sendo desenvolvido por apenas uma pessoa, com fim de aprimorar
 - Versão (1.0.0)
 <p align="center">
   Foi adicionado e configurado os primeiros arquivos, foi criado tambem a primeira rota para adicionar e popular a tabela de insumos, 
-  segue a primeira imagem de como esta.
+  segue a primeira imagem de como esta, onde o lado esquerdo é oque foi enviado para o servidor e o lado direito o retorno de criação.
   
   <img src=".github/imagem_2021-09-26_175451.png" alt="Insomnia" />
-  <img src=".github/imagem_2021-09-26_180220.png" alt="Banco" />
+  <img src=".github/banco.png" alt="Banco" />
+  
+  adicionado recentemente agora a criação da tabela de preços sugeridos com as configurações para popular a tabela.
+  
+  <img src=".github/preco_sugerido.png" alt="Preço Sugerido" />
 
 ## 🚀 Como executar
 
