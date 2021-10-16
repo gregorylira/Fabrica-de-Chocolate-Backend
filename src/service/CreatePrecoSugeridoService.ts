@@ -16,7 +16,7 @@ interface IPrecoSugerido {
 }
 
 
-class CreatePrecoSugerido {
+class CreatePrecoSugeridoService {
     async execute({produto,custo_MP,custo_total,preco_min,preco_max,preco_medio,seu_preco_venda,imposto_sob_venda,margem_contribuicao,margem_liquida}:IPrecoSugerido){
             const precoSugeridoRepositorie = getCustomRepository(PrecoSugeridoRepositories)
             if(!produto){
@@ -37,9 +37,21 @@ class CreatePrecoSugerido {
             const precoSugerido = precoSugeridoRepositorie.create({
                 produto,
                 custo_MP,
+                custo_total,
+                preco_min,
+                preco_max,
+                preco_medio,
+                seu_preco_venda,
+                imposto_sob_venda,
+                margem_contribuicao,
+                margem_liquida
             })
+
+            await precoSugeridoRepositorie.save(precoSugerido);
+
+            return precoSugerido;
         }
 }
 
 
-export { CreatePrecoSugerido }
+export { CreatePrecoSugeridoService }
