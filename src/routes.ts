@@ -7,6 +7,7 @@ import { ListaComposicaoProdutoController } from "./controllers/ListComposicaoPr
 import { ListInsumoController } from "./controllers/ListInsumoController"
 import { ListPrecoSugeridoController } from "./controllers/ListPrecoSugeridoController"
 import { modifyInsumoController } from "./controllers/ModifyInsumoController"
+import { ModifyPrecoSugeridoController } from "./controllers/ModifyPrecoSugeridoController"
 const router = Router()
 
 const createInsumoController = new CreateInsumoController
@@ -14,6 +15,7 @@ const createPrecoSugeridoController = new CreatePrecoSugeridoController
 const createComposicaoController = new CreateComposicaoController
 const createComposicaoAdicionalController = new CreateComposicaoAdicionalController()
 const modifyInsumoService = new modifyInsumoController()
+const modifyPrecoSugeridoController = new ModifyPrecoSugeridoController()
 
 
 const ListInsumo = new ListInsumoController
@@ -26,6 +28,7 @@ router.post("/preco-sugerido",createPrecoSugeridoController.handle)
 router.post("/composicao", createComposicaoController.handle)
 router.post("/composicao-adicional", createComposicaoAdicionalController.handle)
 router.post("/modify-insumo", modifyInsumoService.handle)
+router.post("/modify-preco-sugerido", modifyPrecoSugeridoController.handle)
 
 
 router.get("/insumo", ListInsumo.handle )
