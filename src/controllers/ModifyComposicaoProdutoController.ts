@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ModifyComposicaoProdutoService } from "../service/ModifyComposicaoProdutoService";
+import { ModifyComposicaoProdutoService, ModifyComposicaoAdicionalService } from "../service/ModifyComposicaoProdutoService";
 
 
 
@@ -16,5 +16,15 @@ class ModifyComposicaoProdutoController {
 
 }
 
+class ModifyComposicaoAdicionalProdutoController{
+    async handle(request: Request, response: Response){
+        const {produto_adicional, quantidade_liquida, und, custo_adicional, seu_preco, imposto_sob_venda, margem_contribuicao, margem_liquida } = request.body;
 
-export { ModifyComposicaoProdutoController };
+        const composicaoAdicionalProduto = new ModifyComposicaoAdicionalService();
+        const composicaoAdicionalModificada = await composicaoAdicionalProduto.execute({produto_adicional, quantidade_liquida, und, custo_adicional, seu_preco, imposto_sob_venda, margem_contribuicao, margem_liquida});
+
+        return response.status(200).json(composicaoAdicionalModificada);
+    }
+}
+
+export { ModifyComposicaoProdutoController, ModifyComposicaoAdicionalProdutoController };

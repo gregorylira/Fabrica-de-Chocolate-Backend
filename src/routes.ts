@@ -6,7 +6,7 @@ import { CreatePrecoSugeridoController } from "./controllers/CreatePrecoSugerido
 import { ListaComposicaoProdutoController } from "./controllers/ListComposicaoProdutoController"
 import { ListInsumoController } from "./controllers/ListInsumoController"
 import { ListPrecoSugeridoController } from "./controllers/ListPrecoSugeridoController"
-import { ModifyComposicaoProdutoController } from "./controllers/ModifyComposicaoProdutoController"
+import { ModifyComposicaoProdutoController, ModifyComposicaoAdicionalProdutoController } from "./controllers/ModifyComposicaoProdutoController"
 import { modifyInsumoController } from "./controllers/ModifyInsumoController"
 import { ModifyPrecoSugeridoController } from "./controllers/ModifyPrecoSugeridoController"
 const router = Router()
@@ -18,7 +18,7 @@ const createComposicaoAdicionalController = new CreateComposicaoAdicionalControl
 const modifyInsumoService = new modifyInsumoController()
 const modifyPrecoSugeridoController = new ModifyPrecoSugeridoController()
 const modifyComposicaoProdutoController = new ModifyComposicaoProdutoController()
-
+const modifyComposicaoAdicionalProdutoController = new ModifyComposicaoAdicionalProdutoController()
 
 const ListInsumo = new ListInsumoController
 const listPrecoSugeridoController = new ListPrecoSugeridoController
@@ -32,6 +32,7 @@ router.post("/composicao-adicional", createComposicaoAdicionalController.handle)
 router.post("/modify-insumo", modifyInsumoService.handle)
 router.post("/modify-preco-sugerido", modifyPrecoSugeridoController.handle)
 router.post("/modify-composicao-produto", modifyComposicaoProdutoController.handle)
+router.post("/modify-composicao-adicional-produto", modifyComposicaoAdicionalProdutoController.handle)
 
 
 router.get("/insumo", ListInsumo.handle )
