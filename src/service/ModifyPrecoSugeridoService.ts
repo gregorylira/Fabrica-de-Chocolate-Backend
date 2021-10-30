@@ -18,7 +18,7 @@ class ModifyPrecoSugeridoService {
     async execute({produto, custo_MP, custo_total, preco_min, preco_max, preco_medio, seu_preco_venda, imposto_sob_venda, margem_contribuicao, margem_liquida }: IPrecoSugerido) {
        const precoSugeridoRepositories = getCustomRepository(PrecoSugeridoRepositories);
        if (!produto || !custo_MP || !custo_total || !preco_min || !preco_max || !preco_medio || !seu_preco_venda || !imposto_sob_venda || !margem_contribuicao || !margem_liquida) {
-            throw new Error('Falta de informação');
+            throw new Error('Preencha todos os campos');
        }
        const precoSugerido = await precoSugeridoRepositories.findOne({where: {produto}});
 

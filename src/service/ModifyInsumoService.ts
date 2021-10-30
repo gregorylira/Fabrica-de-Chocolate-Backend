@@ -18,7 +18,7 @@ class ModifyInsumoService {
     async execute({produto, medida, und, custo_rede, custo = null, custo_atual, aproveitamento, custo_real, custo_final }: IInsumoRequest){
        const insumoRepository = getCustomRepository(InsumoRepositories);
        if (!produto || !medida || !und ||!custo || !custo_rede || !custo_atual || !aproveitamento || !custo_real || !custo_final) {
-            throw new Error('Falta de informação');
+            throw new Error('Preencha todos os campos');
        }
        const insumo = await insumoRepository.findOne({where: {produto}});
 
