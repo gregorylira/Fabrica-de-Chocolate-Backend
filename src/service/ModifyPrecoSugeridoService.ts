@@ -23,7 +23,7 @@ class ModifyPrecoSugeridoService {
        const precoSugerido = await precoSugeridoRepositories.findOne({where: {produto}});
 
        if(!precoSugerido){
-            throw new Error('Insumo não encontrado');
+            throw new Error('Produto não encontrado');
        }
 
        await precoSugeridoRepositories.update(precoSugerido.id,{produto, custo_MP, custo_total, preco_min, preco_max, preco_medio, seu_preco_venda, imposto_sob_venda, margem_contribuicao, margem_liquida});
