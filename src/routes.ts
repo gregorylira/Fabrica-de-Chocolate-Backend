@@ -9,6 +9,7 @@ import { ListPrecoSugeridoController } from "./controllers/ListPrecoSugeridoCont
 import { ModifyComposicaoProdutoController, ModifyComposicaoAdicionalProdutoController } from "./controllers/ModifyComposicaoProdutoController"
 import { modifyInsumoController } from "./controllers/ModifyInsumoController"
 import { ModifyPrecoSugeridoController } from "./controllers/ModifyPrecoSugeridoController"
+import {DeleteInsumoController, DeletePrecoSugeridoController, DeleteComposicaoController, DeleteComposicaoAdicionalController} from "./controllers/DeleteController"
 const router = Router()
 
 const createInsumoController = new CreateInsumoController
@@ -19,6 +20,13 @@ const modifyInsumoService = new modifyInsumoController()
 const modifyPrecoSugeridoController = new ModifyPrecoSugeridoController()
 const modifyComposicaoProdutoController = new ModifyComposicaoProdutoController()
 const modifyComposicaoAdicionalProdutoController = new ModifyComposicaoAdicionalProdutoController()
+const deleteInsumoController = new DeleteInsumoController()
+const deletePrecoSugeridoController = new DeletePrecoSugeridoController()
+const deleteComposicaoController = new DeleteComposicaoController()
+const deleteComposicaoAdicionalController = new DeleteComposicaoAdicionalController()
+
+
+
 
 const ListInsumo = new ListInsumoController
 const listPrecoSugeridoController = new ListPrecoSugeridoController
@@ -33,6 +41,12 @@ router.post("/modify-insumo", modifyInsumoService.handle)
 router.post("/modify-preco-sugerido", modifyPrecoSugeridoController.handle)
 router.post("/modify-composicao-produto", modifyComposicaoProdutoController.handle)
 router.post("/modify-composicao-adicional-produto", modifyComposicaoAdicionalProdutoController.handle)
+router.post("/delete-insumo", deleteInsumoController.handle)
+router.post("/delete-preco-sugerido", deletePrecoSugeridoController.handle)
+router.post("/delete-composicao", deleteComposicaoController.handle)
+router.post("/delete-composicao-adicional", deleteComposicaoAdicionalController.handle)
+
+
 
 
 router.get("/insumo", ListInsumo.handle )
