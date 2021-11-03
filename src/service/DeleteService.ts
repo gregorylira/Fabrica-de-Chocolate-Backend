@@ -9,8 +9,10 @@ import { PrecoSugeridoRepositories } from "../repositories/PrecoSugeridoReposito
 class DeleteInsumoService{
 
     async execute(produto:string){
+
         const insumoRepositories = getCustomRepository(InsumoRepositories)
         const insumoExists = await insumoRepositories.findOne({where:{produto:produto}})
+
         if(!insumoExists){
             throw new Error('Insumo não encontrado')
         }
@@ -26,6 +28,7 @@ class DeletePrecoSugeridoService{
     async execute(produto:string){
         const precoSugeridoRepositories = getCustomRepository(PrecoSugeridoRepositories)
         const precoSugeridoExists = await precoSugeridoRepositories.findOne({where:{produto:produto}})
+
         if(!precoSugeridoExists){
             throw new Error('Preço não encontrado')
         }

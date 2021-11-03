@@ -12,14 +12,14 @@ class Composicao {
   produtoFK: string;
 
   @JoinColumn({ name: "produtoFK" })
-  @ManyToOne(()=>Preco_Sugerido)
+  @ManyToOne(()=>Preco_Sugerido,{onDelete: 'CASCADE'})
   produto: Preco_Sugerido;
 
   @Column()
   ingredienteFK: string;
 
   @JoinColumn({ name: "ingredienteFK" })
-  @ManyToMany(()=>Insumo)
+  @ManyToMany(()=>Insumo, {onDelete: 'CASCADE'})
   insumo: Insumo;
 
   @Column()

@@ -49,7 +49,7 @@ export class Composition1635571945755 implements MigrationInterface {
                         referencedTableName: "precosSugeridos",
                         referencedColumnNames: ["id"],
                         columnNames: ["produtoFK"],
-                        onDelete: "SET NULL",
+                        onDelete: "CASCADE",
                         onUpdate: "SET NULL"
                     },
                     {
@@ -57,7 +57,7 @@ export class Composition1635571945755 implements MigrationInterface {
                         referencedTableName: "insumos",
                         referencedColumnNames: ["id"],
                         columnNames: ["ingredienteFK"],
-                        onDelete: "SET NULL",
+                        onDelete: "CASCADE",
                         onUpdate: "SET NULL"
                     }
                 ]
