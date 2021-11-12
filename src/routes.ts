@@ -48,7 +48,7 @@ router.delete("/composicao", deleteComposicaoController.handle)
 router.delete("/composicao-adicional", deleteComposicaoAdicionalController.handle)
 
 
-router.put("/insumo", modifyInsumoService.handle)
+router.put("/insumo/:id", modifyInsumoService.handle)
 router.put("/preco-sugerido", modifyPrecoSugeridoController.handle)
 router.put("/composicao", modifyComposicaoProdutoController.handle)
 router.put("/composicao-adicional", modifyComposicaoAdicionalProdutoController.handle)
