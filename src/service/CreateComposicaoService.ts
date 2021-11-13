@@ -17,10 +17,14 @@ class CreateComposicaoService {
         const produtoPrecoSugerido = await precoSugeridoRepositories.findOne(produtoFK)
         
         const ingredienteInsumo = await Insumo.findOne(ingredienteFK)
+        const composicao = getCustomRepository(ComposicaoRepository)
 
+        const composicaoAlreadyExists = await composicao.findOne({ where: { produtoFK:produtoPrecoSugerido.id ,ingredienteFK:ingredienteInsumo.id } })
+        if (composicaoAlreadyExists){
+            throw new Error("Composição já existe")
+        }
 
         const calc_cust = (quant_liqu*ingredienteInsumo.custo_final).toFixed(2)
-        const composicao = getCustomRepository(ComposicaoRepository)
         const comp = composicao.create({
             produtoFK,
             ingredienteFK,

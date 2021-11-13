@@ -7,11 +7,16 @@ class ModifyComposicaoProdutoController {
 
     async handle(request: Request, response: Response){
         const {produtoFK, ingredienteFK, quant_liqu} = request.body;
-
         const composicaoProdutoService = new ModifyComposicaoProdutoService();
         const composicaoModificada = await composicaoProdutoService.execute({produtoFK, ingredienteFK, quant_liqu});
-    
-        return response.status(200).json(composicaoModificada);
+        
+        return response.status(200).json({
+            produtoFK: produtoFK,
+            ingredienteFK: ingredienteFK,
+            quant_liqu: composicaoModificada.quant_liqu,
+            unid_medidaFK: composicaoModificada.unid_medidaFK,
+            custo_insumoFK: composicaoModificada.custo_InsumoFK
+        });
     }
 
 }

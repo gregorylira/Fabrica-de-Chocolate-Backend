@@ -8,9 +8,10 @@ class ListaComposicaoProdutoController{
 
     async handle(request: Request, response: Response, next: NextFunction){
         var {produto} = request.query;
+        if (produto) {
         produto = produto.toString();
         produto = produto.replace(/\+/g, " ");
-        
+        }else {produto = "none"}
         const listaComposicaoProdutoService = new ListaComposicaoProdutoService()
         const listPrecosSugeridos = await listaComposicaoProdutoService.execute(produto)
 

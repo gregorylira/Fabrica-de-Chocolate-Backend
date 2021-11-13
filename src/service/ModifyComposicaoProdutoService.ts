@@ -45,8 +45,14 @@ class ModifyComposicaoProdutoService {
 
         await composicaoProdutoRepository.update(composicaoProduto.id, {produtoFK: produto.id, ingredienteFK: insumo.id, quant_liqu: quant_liqu})
         const novaComposicao = await composicaoProdutoRepository.findOne({where: {id: composicaoProduto.id}})
-
-        return novaComposicao
+        const novaComp = {
+            produtoFK,
+            ingredienteFK,
+            quant_liqu: novaComposicao.quant_liqu,
+            unid_medidaFK: novaComposicao.unid_medidaFK,
+            custo_InsumoFK: novaComposicao.custo_InsumoFK
+        }
+        return novaComp
     }
 }
 

@@ -4,6 +4,8 @@ import { InsumoRepositories } from "../repositories/InsumosRepositories"
 import { PrecoSugeridoRepositories } from "../repositories/PrecoSugeridoRepositories"
 
 interface ITratamentoListaComposicao {
+    id: string,
+    produto: string,
     ingrediente: string,
     quant_liqu: number,
     unid_medidaFK: number,
@@ -30,7 +32,9 @@ class TratamentoListaComposicao {
             })
 
             const compo = {
-                ingrediente: insumo.produto,
+                id: val.id,
+                produtoFK: produto.produto,
+                ingredienteFK: insumo.produto,
                 quant_liqu: quant_liqu,
                 unid_medidaFK: unid_medidaFK,
                 custo_insumoFK: custo_InsumoFK
